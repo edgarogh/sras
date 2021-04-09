@@ -1,0 +1,14 @@
+[package]
+name = "sras-cli"
+version = "0.1.0"
+authors = ["Edgar Onghena <dev@edgar.bzh>"]
+edition = "2018"
+
+[dependencies]
+clap = "3.0.0-beta.2"
+minifb = "0.19"
+serialport = "4.0"
+rustyline = "8.0"
+
+[build-dependencies]
+cpp_build = "0.5"
