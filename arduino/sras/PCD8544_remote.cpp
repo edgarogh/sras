@@ -25,6 +25,11 @@ void RemPCD8544::write(char c) {
   Serial.write('\n');
 }
 
+void RemPCD8544::print(const char* str) {
+  Serial.print("+p");
+  Serial.println(str);
+}
+
 void RemPCD8544::print(int num, int radix) {
   Serial.print("+p");
   Serial.println(num, radix);

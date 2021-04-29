@@ -1,0 +1,3 @@
+commands:
+  sras:
+    usage: /sras plant OR /sras connect <endpoint> OR /sras disconnect

@@ -1,0 +1,17 @@
+name = "Plante Générique"
+
+[soil]
+min = 400
+max = 800
+
+[temperature]
+min = 30
+max = 35
+
+[hygro]
+min = 0.6
+max = 0.8
+
+[pump]
+duration = 2_000
+wait = 15_000

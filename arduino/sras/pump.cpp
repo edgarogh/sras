@@ -6,7 +6,8 @@
 
 namespace pump {
 
-long dispense_end = 0;
+unsigned long dispense_end = 0;
+unsigned long dispense_lock = 0;
 
 
 void setup(void) {
@@ -14,12 +15,19 @@ void setup(void) {
 }
 
 
-void dispense(int duration) {
+void dispense(uint32_t duration, uint32_t lock) {
+  long now = millis();
+  
   if (dispense_end != 0) {
     return;
   }
 
-  dispense_end = millis() + duration;
+  if (now < dispense_lock) {
+    return;
+  }
+
+  dispense_end = now + duration;
+  dispense_lock = dispense_end + lock;
 
   digitalWrite(PIN_PUMP, HIGH);
 }
